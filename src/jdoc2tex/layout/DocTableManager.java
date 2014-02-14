@@ -28,7 +28,7 @@ public class DocTableManager implements ITableManager {
 		String[] tmp = new String[row.length];
 		for (int i = 0; i < row.length; i++) {
 			tmp[i] = size + " "
-					+ row[i].replaceAll("\\\\\\\\", "\\\\par \\" + size);
+					+ row[i].replaceAll("\\\\\\\\", "\\\\par \\" + size + " ");
 		}
 		return rows.add(tmp);
 	}
