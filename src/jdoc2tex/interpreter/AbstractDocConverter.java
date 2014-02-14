@@ -3,7 +3,13 @@ package jdoc2tex.interpreter;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public abstract class AbstractDocConverter implements IDocConverter{
+public abstract class AbstractDocConverter implements IDocConverter {
+
+	protected String vspace() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("\\vspace{-2zw}").append("\n");
+		return sb.toString();
+	}
 
 	protected String shortstack(String plain) {
 		String ss = plain.toString();

@@ -6,17 +6,19 @@ import jdoc2tex.layout.TexFontSize;
 
 import com.sun.javadoc.ClassDoc;
 
-public class DocClassOverviewConverter extends AbstractDocConverter{
+public class DocClassOverviewConverter extends AbstractDocConverter {
 
 	@Override
 	public String interpretConverter(ClassDoc classDoc) {
 		ITableManager table = new DocTableManager(1);
-		
+
 		table.addRow("");
-		table.addRow(TexFontSize.LARGE1,classDoc.qualifiedName());
-		table.addRow(classDoc.commentText());
-		
+		table.addRow(TexFontSize.LARGE1, classDoc.qualifiedName());
+		table.addRow(par(classDoc.commentText()));
+
+		table.enableTopMargin();
+
 		return table.generateTable();
 	}
-	
+
 }

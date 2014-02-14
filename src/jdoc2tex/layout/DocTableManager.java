@@ -9,9 +9,15 @@ public class DocTableManager implements ITableManager {
 
 	private double[] width;
 
+	private String topMargin = "\\vspace{-2zw}\n";
+
 	public DocTableManager(double... width) {
 		rows = new ArrayList<>();
 		this.width = width;
+	}
+
+	public void enableTopMargin() {
+		topMargin = "";
 	}
 
 	public boolean addRow(String... row) {
@@ -21,7 +27,8 @@ public class DocTableManager implements ITableManager {
 	public boolean addRow(TexFontSize size, String... row) {
 		String[] tmp = new String[row.length];
 		for (int i = 0; i < row.length; i++) {
-			tmp[i] = size + " " + row;
+			tmp[i] = size + " "
+					+ row[i].replaceAll("\\\\\\\\", "\\\\par \\" + size);
 		}
 		return rows.add(tmp);
 	}
@@ -29,17 +36,14 @@ public class DocTableManager implements ITableManager {
 	public String generateTable() {
 		StringBuilder sb = new StringBuilder();
 
-		// sb.append("\\begin{longtable}{p{0.3\\textwidth}|p{0.7\\textwidth}}")
-		// .append("\n");
-
+		sb.append(topMargin);
 		sb.append(begin()).append("\n"); // \\begin{longtable}{p{0.3\\textwidth}|p{0.7\\textwidth}}
 		sb.append(" \\hline").append("\n");
 		for (String[] row : rows) {
 			sb.append(genrow(row));
-			sb.append("\\\\ ").append("\n");
-			sb.append(" \\hline").append("\n");
+			sb.append("\n");
 		}
-		sb.append("\\end{longtable}");
+		sb.append("\\end{longtable}").append("\n");
 
 		return sb.toString();
 	}
@@ -66,6 +70,7 @@ public class DocTableManager implements ITableManager {
 
 	/**
 	 * row[0] & row[1] & row[2] ...
+	 * 
 	 * @param row
 	 * @return
 	 */
@@ -73,11 +78,15 @@ public class DocTableManager implements ITableManager {
 		StringBuilder sb = new StringBuilder();
 		for (String cel : row) {
 			sb.append(cel);
-			sb.append(" &");
+			sb.append("&");
 		}
 		if (row.length > 0) {
 			sb.deleteCharAt(sb.length() - 1);
 		}
+		if (sb.length() != 0) {
+			sb.append("\\\\ ").append("\n");
+		}
+		sb.append(" \\hline");
 		return sb.toString();
 	}
 }

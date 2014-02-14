@@ -12,24 +12,25 @@ public class DocMethodSummaryConverter extends AbstractDocConverter {
 
 	@Override
 	public String interpretConverter(ClassDoc classDoc) {
-		
-		ITableManager table = new DocTableManager(0.3,0.7);
-		
-		table.addRow("Method","Summary");
+
+		ITableManager table = new DocTableManager(0.3, 0.7);
+
+		table.addRow("Method", "Summary");
 		for (MethodDoc method : classDoc.methods()) {
-			table.addRow(getMethodName(method),par(method.commentText()));
+			table.addRow(TexFontSize.SCRIPTSIZE, getMethodName(method),
+					par(method.commentText()));
 		}
-		
+
 		return table.generateTable();
 	}
-	
+
 	private String getMethodName(MethodDoc method) {
 		StringBuilder sb = new StringBuilder();
 		sb.append(method.name());
 		if (method.parameters().length > 0) {
 			sb.append("\\\\");
 		}
-		sb.append("\\scriptsize \\ \\ (");
+		sb.append("\\ \\ (");
 
 		for (Parameter param : method.parameters()) {
 			sb.append(param.type().simpleTypeName()).append(",");

@@ -6,5 +6,7 @@ public interface ITableManager {
 
 	boolean addRow(TexFontSize size, String... row);
 
+	void enableTopMargin();
+	
 	String generateTable();
 }
