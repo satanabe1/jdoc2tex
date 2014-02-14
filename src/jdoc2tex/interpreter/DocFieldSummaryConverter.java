@@ -28,7 +28,7 @@ public class DocFieldSummaryConverter extends AbstractDocConverter {
 	private String getFieldName(FieldDoc field) {
 		StringBuilder sb = new StringBuilder();
 		sb.append(escape(field.name()));
-			sb.append("\\\\");
+		sb.append("\\\\");
 		sb.append("\\ \\ (");
 
 

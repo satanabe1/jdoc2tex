@@ -14,7 +14,7 @@ public class DocClassOverviewConverter extends AbstractDocConverter {
 
 		table.addRow("");
 		table.addRow(TexFontSize.SCRIPTSIZE,escape(classDoc.containingPackage().name()
-				+ "\\\\ \\Large Class " + escape(classDoc.name())));
+				+ "\\\\ \\large Class " + escape(classDoc.name())));
 		table.addRow(par(classDoc.commentText()));
 
 		table.enableTopMargin();
