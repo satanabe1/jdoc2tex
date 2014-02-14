@@ -33,6 +33,10 @@ public class DocSuperClassSummaryConverter extends AbstractDocConverter {
 	}
 
 	private String genarateSuperClassList(Stack<String> superClassStack) {
+//		if (superClassStack.size()<3) {
+//			return "";
+//		}
+		
 		StringBuilder sb = new StringBuilder();
 		int i = 0;
 		while (0 < superClassStack.size()) {
