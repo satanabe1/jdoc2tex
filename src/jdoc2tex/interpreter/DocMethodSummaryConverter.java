@@ -20,6 +20,8 @@ public class DocMethodSummaryConverter extends AbstractDocConverter {
 
 		table.addRow("Method", "Summary");
 		for (MethodDoc method : classDoc.methods()) {
+			// getMethod comment to interface or superclass
+			
 			table.addRow(TexFontSize.SCRIPTSIZE, getMethodName(method),
 					par(method.commentText()));
 		}
@@ -44,5 +46,12 @@ public class DocMethodSummaryConverter extends AbstractDocConverter {
 
 		sb.append(")");
 		return sb.toString();
+	}
+	
+	private String getCommentSuperClass(ClassDoc classDoc, MethodDoc methodDoc) {
+		if (methodDoc.commentText().equals("")) {
+			
+		}
+		return "";
 	}
 }
