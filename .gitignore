@@ -56,4 +56,4 @@ local.properties
 
 hoge*
 *.pdf
-
+out/

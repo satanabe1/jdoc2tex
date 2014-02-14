@@ -18,14 +18,14 @@ public class LongTable extends TexOut {
 		String classsummary = shortstack(klass.commentText());
 
 		StringBuilder sb = new StringBuilder();
-		sb.append("\\begin{longtable}{|p{0.3\\textwidth}|p{0.7\\textwidth}|}")
+		sb.append("\\begin{longtable}{p{0.3\\textwidth}|p{0.7\\textwidth}}")
 				.append("\n");
 		sb.append(" \\hline").append("\n");
 		sb.append(" \\hline").append("\n");
-		sb.append(" \\multicolumn{2}{|l|}{\\large ").append(classname)
+		sb.append(" \\multicolumn{2}{l}{\\large ").append(classname)
 				.append(" } \\\\").append("\n");
 		sb.append(" \\hline").append("\n");
-		sb.append(" \\multicolumn{2}{|l|}{");
+		sb.append(" \\multicolumn{2}{l}{");
 		sb.append("\\footnotesize ");
 		sb.append(classsummary);
 		sb.append("} \\\\").append("\n");
@@ -44,10 +44,12 @@ public class LongTable extends TexOut {
 	private String row(MethodDoc method) {
 		StringBuilder sb = new StringBuilder(" ");
 		sb.append("\\scriptsize ");
-		sb.append(shortstack(getMethodName(method)));
+		// sb.append(shortstack(getMethodName(method)));
+		sb.append(par(getMethodName(method)));
 		sb.append(" & ");
 		sb.append("\\scriptsize ");
-		sb.append(shortstack(method.commentText()));
+		// sb.append(shortstack(method.commentText()));
+		sb.append(par(method.commentText()));
 		sb.append(" \\\\").append("\n");
 		sb.append(" \\hline");
 		return sb.toString();
@@ -70,10 +72,10 @@ public class LongTable extends TexOut {
 
 		sb.append(")");
 
-//		int height = getHeight(method.commentText());
-//		for (int i = 0; i < height; i++) {
-//			sb.append(" \\\\ \\smallskip");
-//		}
+		// int height = getHeight(method.commentText());
+		// for (int i = 0; i < height; i++) {
+		// sb.append(" \\\\ \\smallskip");
+		// }
 
 		return sb.toString();
 	}
@@ -99,7 +101,7 @@ public class LongTable extends TexOut {
 		// {@link Hogehoge} を Hogehoge だけにする
 		ss = ss.replaceAll("\\{@link (.*?)\\}", "$1");
 		// <br> を \\ に置換
-		ss = ss.replaceAll("<\\s*?[Bb][Rr].*?>", " \\\\\\\\");
+		ss = ss.replaceAll("<\\s*?[Bb][Rr].*?>", " \\\\par");
 		ss = escape(ss);
 		return ss.toString();
 	}
