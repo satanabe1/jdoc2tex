@@ -4,6 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import jdoc2tex.interpreter.DocClassOverviewConverter;
+import jdoc2tex.interpreter.DocImplementedInterfacesConverter;
 import jdoc2tex.interpreter.DocMethodSummaryConverter;
 import jdoc2tex.interpreter.DocSuperClassSummaryConverter;
 import jdoc2tex.interpreter.IDocConverter;
