@@ -1,5 +1,9 @@
 package jdoc2tex.interpreter;
 
+import jdoc2tex.layout.DocTableManager;
+import jdoc2tex.layout.ITableManager;
+import jdoc2tex.layout.TexFontSize;
+
 import com.sun.javadoc.ClassDoc;
 import com.sun.javadoc.MethodDoc;
 import com.sun.javadoc.Parameter;
@@ -8,33 +12,17 @@ public class DocMethodSummaryConverter extends AbstractDocConverter {
 
 	@Override
 	public String interpretConverter(ClassDoc classDoc) {
-		StringBuilder sb = new StringBuilder();
-		sb.append(" \\hline").append("\n");
-		sb.append("Method  & Summary \\\\").append("\n");
-		sb.append(" \\hline").append("\n");
+		
+		ITableManager table = new DocTableManager(0.3,0.7);
+		
+		table.addRow("Method","Summary");
 		for (MethodDoc method : classDoc.methods()) {
-			sb.append(row(method));
-			sb.append("\n");
+			table.addRow(getMethodName(method),par(method.commentText()));
 		}
 		
-		return sb.toString();
+		return table.generateTable();
 	}
-
-
-	private String row(MethodDoc method) {
-		StringBuilder sb = new StringBuilder(" ");
-		sb.append("\\scriptsize ");
-		// sb.append(shortstack(getMethodName(method)));
-		sb.append(par(getMethodName(method)));
-		sb.append(" & ");
-		sb.append("\\scriptsize ");
-		// sb.append(shortstack(method.commentText()));
-		sb.append(par(method.commentText()));
-		sb.append(" \\\\").append("\n");
-		sb.append(" \\hline");
-		return sb.toString();
-	}
-
+	
 	private String getMethodName(MethodDoc method) {
 		StringBuilder sb = new StringBuilder();
 		sb.append(method.name());
