@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="master" default="main" basedir=".">
+
+	<!--<property name="project" value="${basedir}" />-->
+	<property name="project" value="jdoc2tex" />
+	<property name="src.dir" location="src" />
+	<!-- java source -->
+	<property name="class.dir" location="classes" />
+	<!-- java class -->
+	<property name="doc.dir" location="doc" />
+	<property name="lib.dir" location="lib" />
+	<property name="jar.dir" location="jar" />
+	<property name="jar.name" value="${project}.jar" />
+
+	<property name="src.encoding" value="utf8" />
+	<!-- source encoding -->
+	<property name="src.version" value="1.7" />
+	<!-- source version -->
+
+	<path id="lib.path">
+		<fileset dir="${lib.dir}">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+
+	<target name="main" depends="init, compile, compress">
+		<echo>BuildNumber:&lt;${build.number}&gt;</echo>
+	</target>
+
+
+	<target name="init">
+		<mkdir dir="${class.dir}" />
+		<mkdir dir="${jar.dir}" />
+        <mkdir dir="${lib.dir}" />
+		<delete>
+			<fileset dir="${class.dir}" includes="**/*.class" />
+			<fileset dir="${jar.dir}" includes="**/*.jar" />
+		</delete>
+	</target>
+
+	<target name="compile">
+		<javac fork="true" memoryInitialSize="256m" memoryMaximumSize="2g" srcdir="${src.dir}" destdir="${class.dir}" source="${src.version}" target="${src.version}" encoding="${src.encoding}" debug="on" includeAntRuntime="on">
+			<classpath refid="lib.path" />
+			<!--
+            <exclude name="**/sample/**/*.java" />
+            -->
+		</javac>
+	</target>
+
+	<target name="doc">
+		<javadoc destdir="${doc.dir}">
+			<fileset dir="${src.dir}" defaultexcludes="yes">
+				<exclude name="sample/**/*.java" />
+			</fileset>
+		</javadoc>
+	</target>
+
+	<target name="copysrc">
+		<copy todir="classes">
+			<fileset dir="${src.dir}">
+				<exclude name="**/sample/**/*" />
+			</fileset>
+		</copy>
+	</target>
+
+	<!--<target name="compress" depends="copysrc">-->
+	<target name="compress">
+		<buildnumber file=".number.release"/>
+		<tstamp />
+		<jar destfile="${jar.dir}/${jar.name}" basedir="${class.dir}" includes="**/*.*" excludes="**/sample/**/*">
+			<manifest>
+				<attribute name="Author" value="${user.name}" />
+				<section name="${project}/">
+                    <attribute name="Title" value="${project}" />
+					<attribute name="Vendor" value="" />
+					<attribute name="Build" value="${build.number}" />
+					<attribute name="Date" value="${TODAY}" />
+                    <attribute name="Implementation-Title" value="${project}" />
+					<attribute name="Implementation-Vendor" value="" />
+					<!--<attribute name="Implementation-Version" value="Build:&lt;${build.number}&gt; ${TODAY}" />-->
+					<attribute name="Implementation-Version" value="Build#${build.number} ${TODAY}" />
+				</section>
+				<section name="Copyright">
+					<attribute name="Copy" value="" />
+				</section>
+			</manifest>
+		</jar>
+	</target>
+</project>
+

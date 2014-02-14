@@ -51,7 +51,6 @@ local.properties
 *.war
 *.ear
 /doc
-/.number.release
 
 
 hoge*
