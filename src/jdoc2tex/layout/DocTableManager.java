@@ -10,6 +10,7 @@ public class DocTableManager implements ITableManager {
 	private double[] width;
 
 	private String topMargin = "\\vspace{-2zw}\n";
+	private String paddingCommand = "\\rule{0.3zw}{0ex} ";
 
 	public DocTableManager(double... width) {
 		rows = new ArrayList<>();
@@ -21,14 +22,22 @@ public class DocTableManager implements ITableManager {
 	}
 
 	public boolean addRow(String... row) {
-		return rows.add(row);
+		return addRow(TexFontSize.SCRIPTSIZE, row);
 	}
 
 	public boolean addRow(TexFontSize size, String... row) {
 		String[] tmp = new String[row.length];
+		if (empty(row)) {
+			return rows.add(row);
+		}
 		for (int i = 0; i < row.length; i++) {
+			tmp[i] = row[i].replaceAll("\\\\\\\\", "\\\\par");
+			tmp[i] = paddingLeft(tmp[i]);
 			tmp[i] = size + " "
-					+ row[i].replaceAll("\\\\\\\\", "\\\\par \\" + size + " ");
+					+ tmp[i].replaceAll("\\\\par", "\\\\par \\" + size + " ");
+
+			// tmp[i] = size + " "
+			// + row[i].replaceAll("\\\\\\\\", "\\\\par \\" + size + " ");
 		}
 		return rows.add(tmp);
 	}
@@ -55,6 +64,7 @@ public class DocTableManager implements ITableManager {
 	 */
 	private String begin() {
 		StringBuilder sb = new StringBuilder();
+		sb.append("\\setlength{\\tabcolsep}{0mm}");
 		sb.append("\\begin{longtable}{");
 		for (double wd : width) {
 			// p{0.3\\textwidth}|
@@ -76,17 +86,37 @@ public class DocTableManager implements ITableManager {
 	 */
 	private String genrow(String[] row) {
 		StringBuilder sb = new StringBuilder();
+		if (empty(row)) {
+			sb.append(" \\hline");
+			return sb.toString();
+		}
 		for (String cel : row) {
 			sb.append(cel);
+			// sb.append(paddingLeft(cel));
 			sb.append("&");
 		}
 		if (row.length > 0) {
 			sb.deleteCharAt(sb.length() - 1);
 		}
-		if (sb.length() != 0) {
-			sb.append("\\\\ ").append("\n");
-		}
+		sb.append("\\\\ ").append("\n");
 		sb.append(" \\hline");
 		return sb.toString();
+	}
+
+	private boolean empty(String[] row) {
+		for (String s : row) {
+
+			if (s.length() != 0) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	private String paddingLeft(String plain) {
+		return paddingCommand
+				+ plain.replaceAll("\\\\par", "\\\\par \\" + paddingCommand
+						+ " ");
+		// return plain;
 	}
 }
