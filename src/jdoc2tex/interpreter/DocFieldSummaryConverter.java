@@ -13,7 +13,7 @@ public class DocFieldSummaryConverter extends AbstractDocConverter {
 
 	@Override
 	public String interpretConverter(ClassDoc classDoc) {
-		if (classDoc.fields(false).length==0) {
+		if (classDoc.fields().length==0) {
 			return "";
 		}
 
