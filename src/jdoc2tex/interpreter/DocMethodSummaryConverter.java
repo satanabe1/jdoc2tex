@@ -26,14 +26,14 @@ public class DocMethodSummaryConverter extends AbstractDocConverter {
 
 	private String getMethodName(MethodDoc method) {
 		StringBuilder sb = new StringBuilder();
-		sb.append(method.name());
+		sb.append(escape(method.name()));
 		if (method.parameters().length > 0) {
 			sb.append("\\\\");
 		}
 		sb.append("\\ \\ (");
 
 		for (Parameter param : method.parameters()) {
-			sb.append(param.type().simpleTypeName()).append(",");
+			sb.append(escape(param.type().simpleTypeName())).append(",");
 		}
 		if (method.parameters().length > 0) {
 			sb.deleteCharAt(sb.length() - 1);

@@ -11,24 +11,24 @@ public abstract class AbstractDocConverter implements IDocConverter {
 		return sb.toString();
 	}
 
-	protected String shortstack(String plain) {
-		String ss = plain.toString();
-		// {@link Hogehoge} を Hogehoge だけにする
-		ss = ss.replaceAll("\\{@link (.*?)\\}", "$1");
-		// <br> を \\ に置換
-		ss = ss.replaceAll("<\\s*?[Bb][Rr].*?>", " \\\\\\\\");
-		ss = escape(ss);
-
-		ss = ss.replaceAll("\r\n", "").replaceAll("\r", "")
-				.replaceAll("\n", "");
-
-		StringBuilder sb = new StringBuilder();
-		sb.append("\\shortstack[l]{");
-		sb.append(ss);
-		// sb.append("\\smallskip}");
-		sb.append("{}}");
-		return sb.toString();
-	}
+//	protected String shortstack(String plain) {
+//		String ss = plain.toString();
+//		// {@link Hogehoge} を Hogehoge だけにする
+//		ss = ss.replaceAll("\\{@link (.*?)\\}", "$1");
+//		// <br> を \\ に置換
+//		ss = ss.replaceAll("<\\s*?[Bb][Rr].*?>", " \\\\\\\\");
+//		ss = escape(ss);
+//
+//		ss = ss.replaceAll("\r\n", "").replaceAll("\r", "")
+//				.replaceAll("\n", "");
+//
+//		StringBuilder sb = new StringBuilder();
+//		sb.append("\\shortstack[l]{");
+//		sb.append(ss);
+//		// sb.append("\\smallskip}");
+//		sb.append("{}}");
+//		return sb.toString();
+//	}
 
 	protected String escape(String plain) {
 		String ss = plain.toString();
