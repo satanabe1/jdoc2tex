@@ -1,0 +1,38 @@
+\begin{longtable}{|p{0.3\textwidth}|p{0.7\textwidth}|}
+ \hline
+ \hline
+ \multicolumn{2}{|l|}{\large cgg.astp.ASTUtil } \\
+ \hline
+ \multicolumn{2}{|l|}{\footnotesize \shortstack[l]{ASTParserを使う上で必要となりそうな，諸々の機能を提供するクラス{}}} \\
+ \hline
+Method  & Summary \\
+ \hline
+ \scriptsize \shortstack[l]{getDefaultASTParser\\\ \ (String,String){}} & \scriptsize \shortstack[l]{ASTParserのインスタンス生成用テンプレ的処理をまとめて行い，インスタンスを生成する  \\  \\ ASTParser\#setBindingsRecovery(boolean) =\textgreater true \\ ASTParser\#setResolveBindings(boolean) =\textgreater true \\ ASTParser\#setStatementsRecovery(boolean) =\textgreater true \\ ASTParser\#setEnvironment(String[], String[], String[], boolean) =\textgreater classpath,sourcepath,null,true \\ ASTParser\#setCompilerOptions(Map) =\textgreater JavaCore\#COMPILER\_SOURCE : JavaCore\#VERSION\_1\_7 \\{}} \\
+ \hline
+ \scriptsize \shortstack[l]{getDefaultASTParser\\\ \ (List,List){}} & \scriptsize \shortstack[l]{ASTUtil\#getDefaultASTParser(String[], String[]) を呼び出す{}} \\
+ \hline
+ \scriptsize \shortstack[l]{getDeclaredClass\\\ \ (ASTNode){}} & \scriptsize \shortstack[l]{nodeの所属するクラス宣言を拾う \\ スタティックイニシャライザや、フィールド宣言に直接nodeがある場合、nullが帰る{}} \\
+ \hline
+ \scriptsize \shortstack[l]{getDeclaredMethod\\\ \ (ASTNode){}} & \scriptsize \shortstack[l]{nodeの所属するメソッド宣言を拾う \\ スタティックイニシャライザや、フィールド宣言に直接nodeがあるの場合、nullにする{}} \\
+ \hline
+ \scriptsize \shortstack[l]{isExcludes\\\ \ (MethodInvocation){}} & \scriptsize \shortstack[l]{除外するメソッドに対するメソッド呼び出しか評価する \\ 除外対象: \\ ・匿名クラスに属するメソッド \\ ・メンバークラスに属するメソッド \\ ・java.から始まるクラスに属するメソッド \\ ・javax.から始まるクラスに属するメソッド \\ ・com.から始まるクラスに属するメソッド \\ ・sun.から始まるクラスに属するメソッド \\ ・apple.から始まるクラスに属するメソッド \\{}} \\
+ \hline
+ \scriptsize \shortstack[l]{isExcludes\\\ \ (MethodDeclaration){}} & \scriptsize \shortstack[l]{除外するメソッドか評価する \\ 除外対象: \\ ・匿名クラスに属するメソッド \\ ・メンバークラスに属するメソッド \\ ・java.から始まるクラスに属するメソッド \\ ・javax.から始まるクラスに属するメソッド \\ ・com.から始まるクラスに属するメソッド \\ ・sun.から始まるクラスに属するメソッド \\ ・apple.から始まるクラスに属するメソッド \\{}} \\
+ \hline
+ \scriptsize \shortstack[l]{isExcludes\\\ \ (IMethodBinding){}} & \scriptsize \shortstack[l]{除外するメソッドか評価する \\ 除外対象: \\ ・匿名クラスに属するメソッド \\ ・メンバークラスに属するメソッド \\ ・java.から始まるクラスに属するメソッド \\ ・javax.から始まるクラスに属するメソッド \\ ・com.から始まるクラスに属するメソッド \\ ・sun.から始まるクラスに属するメソッド \\ ・apple.から始まるクラスに属するメソッド \\{}} \\
+ \hline
+ \scriptsize \shortstack[l]{isExcludes\\\ \ (TypeDeclaration){}} & \scriptsize \shortstack[l]{除外するクラスか評価する \\ 除外対象: \\ ・匿名クラス \\ ・メンバークラス \\ ・java.から始まるクラス \\ ・javax.から始まるクラス \\ ・com.から始まるクラス \\ ・sun.から始まるクラス \\ ・apple.から始まるクラス \\{}} \\
+ \hline
+ \scriptsize \shortstack[l]{isExcludes\\\ \ (ITypeBinding){}} & \scriptsize \shortstack[l]{除外するクラスか評価する \\ 除外対象: \\ ・匿名クラス \\ ・メンバークラス \\ ・java.から始まるクラス \\ ・javax.から始まるクラス \\ ・com.から始まるクラス \\ ・sun.から始まるクラス \\ ・apple.から始まるクラス \\{}} \\
+ \hline
+ \scriptsize \shortstack[l]{getCode\\\ \ (CompilationUnit,String){}} & \scriptsize \shortstack[l]{ASTUtil\#rewrite(CompilationUnit, String) へのエイリアス{}} \\
+ \hline
+ \scriptsize \shortstack[l]{rewrite\\\ \ (CompilationUnit,String){}} & \scriptsize \shortstack[l]{コード変換用{}} \\
+ \hline
+ \scriptsize \shortstack[l]{isImplements\\\ \ (String,ITypeBinding){}} & \scriptsize \shortstack[l]{インターフェースが実装されているかを調べる \\ interfacesの中(もしくは継承関係)にtargetが含まれるかを調べる{}} \\
+ \hline
+ \scriptsize \shortstack[l]{editJavadoc\\\ \ (MethodDeclaration,List,boolean){}} & \scriptsize \shortstack[l]{Javadocに文字列を付け加える{}} \\
+ \hline
+ \scriptsize \shortstack[l]{genSuperMethodInvok\\\ \ (MethodDeclaration,String){}} & \scriptsize \shortstack[l]{継承元へのメソッド呼び出しを一行だけ生成して返す{}} \\
+ \hline
+\end{longtable}

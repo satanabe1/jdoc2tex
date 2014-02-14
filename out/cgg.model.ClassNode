@@ -1,0 +1,36 @@
+\begin{longtable}{|p{0.3\textwidth}|p{0.7\textwidth}|}
+ \hline
+ \hline
+ \multicolumn{2}{|l|}{\large cgg.model.ClassNode } \\
+ \hline
+ \multicolumn{2}{|l|}{\footnotesize \shortstack[l]{クラス宣言 \\ できること \\ ・メンバクラスの追加・取得 \\ ・メソッドの追加・取得 \\ ・フィールドの追加・取得 \\ ・修飾子の設定・取得 \\{}}} \\
+ \hline
+Method  & Summary \\
+ \hline
+ \scriptsize \shortstack[l]{getClassName\ \ (){}} & \scriptsize \shortstack[l]{クラス名を返す． \\ 現状ではClassNode\#getId()と同じ．{}} \\
+ \hline
+ \scriptsize \shortstack[l]{addMemberClass\\\ \ (ClassNode){}} & \scriptsize \shortstack[l]{内部クラスを追加する{}} \\
+ \hline
+ \scriptsize \shortstack[l]{getMemberClasses\ \ (){}} & \scriptsize \shortstack[l]{内部クラス一覧を返す{}} \\
+ \hline
+ \scriptsize \shortstack[l]{addMethod\\\ \ (MethodNode){}} & \scriptsize \shortstack[l]{メソッドの追加{}} \\
+ \hline
+ \scriptsize \shortstack[l]{getMethods\ \ (){}} & \scriptsize \shortstack[l]{メソッド一覧の取得{}} \\
+ \hline
+ \scriptsize \shortstack[l]{addField\\\ \ (FieldNode){}} & \scriptsize \shortstack[l]{フィールドの追加{}} \\
+ \hline
+ \scriptsize \shortstack[l]{getFields\ \ (){}} & \scriptsize \shortstack[l]{フィールド一覧の取得{}} \\
+ \hline
+ \scriptsize \shortstack[l]{setModifiers\\\ \ (int){}} & \scriptsize \shortstack[l]{クラス修飾子の設定{}} \\
+ \hline
+ \scriptsize \shortstack[l]{getModifiers\ \ (){}} & \scriptsize \shortstack[l]{クラス修飾子の取得{}} \\
+ \hline
+ \scriptsize \shortstack[l]{add\\\ \ (StNode){}} & \scriptsize \shortstack[l]{メソッドか，フィールドの追加 \\ 内部で， \\ ClassNode\#addMethod(MethodNode)か，ClassNode ClassNode\#addField(FieldNode)を呼び出す{}} \\
+ \hline
+ \scriptsize \shortstack[l]{remove\\\ \ (StNode){}} & \scriptsize \shortstack[l]{メソッドか，フィールドの削除 \\{}} \\
+ \hline
+ \scriptsize \shortstack[l]{getDependsMethods\ \ (){}} & \scriptsize \shortstack[l]{クラス依存するメソッド一覧を取得する \\{}} \\
+ \hline
+ \scriptsize \shortstack[l]{toString\ \ (){}} & \scriptsize \shortstack[l]{{}} \\
+ \hline
+\end{longtable}

@@ -1,0 +1,427 @@
+This is e-pTeX, Version 3.1415926-p3.3-110825-2.4 (sjis.euc) (TeX Live 2012) (format=platex 2013.7.2)  14 FEB 2014 21:37
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**javadoc
+(./javadoc.tex
+pLaTeX2e <2006/11/10> (based on LaTeX2e <2011/06/27> patch level 0)
+Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman-x-2012-05-30, ngerman-x-2012-05-30, afrikaans, ancientgreek, ibycus, arabi
+c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
+h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
+h, french, friulan, galician, german, ngerman, swissgerman, monogreek, greek, h
+ungarian, icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, ma
+rathi, oriya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, 
+kurmanji, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nynorsk,
+ polish, portuguese, romanian, romansh, russian, sanskrit, serbian, serbianc, s
+lovak, slovenian, spanish, swedish, turkish, turkmen, ukrainian, uppersorbian, 
+welsh, loaded.
+(/usr/local/Cellar/texlive/2012/2012/texmf-dist/tex/platex/base/jarticle.cls
+Document Class: jarticle 2006/06/27 v1.6 Standard pLaTeX class
+\c@@paper=\count81
+(/usr/local/Cellar/texlive/2012/2012/texmf-dist/tex/platex/base/jsize10.clo
+File: jsize10.clo 2006/06/27 v1.6 Standard pLaTeX file (size option)
+)
+\c@part=\count82
+\c@section=\count83
+\c@subsection=\count84
+\c@subsubsection=\count85
+\c@paragraph=\count86
+\c@subparagraph=\count87
+\c@figure=\count88
+\c@table=\count89
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\symmincho=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `mincho' in version `bold'
+(Font)                  JY1/mc/m/n --> JY1/gt/m/n on input line 601.
+\toclineskip=\dimen118
+\@lnumwidth=\dimen119
+\bibindent=\dimen120
+\heisei=\count90
+)
+(/usr/local/Cellar/texlive/2012/2012/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip43
+\LTright=\skip44
+\LTpre=\skip45
+\LTpost=\skip46
+\LTchunksize=\count91
+\LTcapwidth=\dimen121
+\LT@head=\box41
+\LT@firsthead=\box42
+\LT@foot=\box43
+\LT@lastfoot=\box44
+\LT@cols=\count92
+\LT@rows=\count93
+\c@LT@tables=\count94
+\c@LT@chunks=\count95
+\LT@p@ftn=\toks15
+)
+(./javadoc.aux)
+\openout1 = `javadoc.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 6.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 6.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 6.
+
+
+LaTeX Warning: No \author given.
+
+(./cgg.astp [1
+
+] (./cgg.astp.TreeBuilder
+Overfull \hbox (24.0pt too wide) in alignment at lines 1--20
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 20
+ []
+
+) (./cgg.astp.Parser
+Overfull \hbox (24.0pt too wide) in alignment at lines 1--18
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 18
+ []
+
+) (./cgg.astp.ParseProgressMonitor
+Overfull \hbox (24.0pt too wide) in alignment at lines 1--26
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 26
+ []
+
+) (./cgg.astp.Nodeid
+Overfull \hbox (24.0pt too wide) in alignment at lines 1--36
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 36
+ []
+
+[2
+
+]) (./cgg.astp.MethodVisitor
+Overfull \hbox (24.0pt too wide) in alignment at lines 1--34
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 34
+ []
+
+[3]) (./cgg.astp.ASTUtil
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 10.
+
+(/usr/local/Cellar/texlive/2012/2012/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <7> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 10.
+
+Overfull \hbox (136.34178pt too wide) in paragraph at lines 10--11
+[]|[]| 
+ []
+
+
+Overfull \hbox (35.5575pt too wide) in paragraph at lines 14--15
+[]|[]| 
+ []
+
+
+Overfull \hbox (42.293pt too wide) in paragraph at lines 16--17
+[]|[]| 
+ []
+
+
+Overfull \hbox (25.80374pt too wide) in paragraph at lines 34--34
+[]|[]| 
+ []
+
+
+Overfull \hbox (4.33005pt too wide) in paragraph at lines 36--36
+[]|[]| 
+ []
+
+
+Overfull \hbox (24.0pt too wide) in alignment at lines 1--38
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 38
+ []
+
+[4])) (./cgg [5] (./cgg.NotImplementedException
+Overfull \hbox (24.0pt too wide) in alignment at lines 1--10
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 10
+ []
+
+) (./cgg.MOption
+Overfull \hbox (68.9911pt too wide) in alignment at lines 1--24
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 24
+ []
+
+) (./cgg.Mi
+Overfull \hbox (24.0pt too wide) in alignment at lines 1--12
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 12
+ []
+
+) (./cgg.Graphvizer
+Overfull \hbox (24.0pt too wide) in alignment at lines 1--14
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 14
+ []
+
+) (./cgg.GOption
+Overfull \hbox (68.9911pt too wide) in alignment at lines 1--22
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 22
+ []
+
+[6
+
+])) (./cgg.io [7] (./cgg.io.MiIntaractor
+Overfull \hbox (24.0pt too wide) in alignment at lines 1--14
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 14
+ []
+
+) (./cgg.io.DotOverviewOutput
+Overfull \hbox (24.0pt too wide) in alignment at lines 1--12
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 12
+ []
+
+) (./cgg.io.DotOutput
+Overfull \hbox (24.0pt too wide) in alignment at lines 1--12
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 12
+ []
+
+) (./cgg.io.DotMethodviewOutput
+Overfull \hbox (24.0pt too wide) in alignment at lines 1--14
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 14
+ []
+
+)) (./cgg.model [8
+
+] (./cgg.model.SwitchNode
+Overfull \hbox (24.0pt too wide) in alignment at lines 1--10
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 10
+ []
+
+) (./cgg.model.StNode
+Overfull \hbox (24.0pt too wide) in alignment at lines 1--43
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 43
+ []
+
+
+Overfull \hbox (1.45753pt too wide) in paragraph at lines 44--45
+[]|[]| 
+ []
+
+
+Overfull \hbox (24.0pt too wide) in alignment at lines 43--48
+ [] [] 
+ []
+
+) (./cgg.model.ReturnNode
+Overfull \hbox (24.0pt too wide) in alignment at lines 1--16
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 16
+ []
+
+[9
+
+]) (./cgg.model.MethodNode
+Overfull \hbox (5.7745pt too wide) in paragraph at lines 30--30
+[]|[]| 
+ []
+
+
+Overfull \hbox (83.5837pt too wide) in paragraph at lines 30--31
+[]|[]| 
+ []
+
+
+Overfull \hbox (25.17737pt too wide) in paragraph at lines 32--32
+[]|[]| 
+ []
+
+
+Overfull \hbox (24.0pt too wide) in alignment at lines 1--36
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 36
+ []
+
+) (./cgg.model.InvocationNode
+Overfull \hbox (49.58308pt too wide) in paragraph at lines 18--19
+[]|[]| 
+ []
+
+
+Overfull \hbox (45.769pt too wide) in paragraph at lines 20--21
+[]|[]| 
+ []
+
+
+Overfull \hbox (116.3333pt too wide) in paragraph at lines 22--23
+[]|[]| 
+ []
+
+
+Overfull \hbox (24.0pt too wide) in alignment at lines 1--26
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 26
+ []
+
+[10]) (./cgg.model.IfNode
+Overfull \hbox (58.32607pt too wide) in paragraph at lines 16--17
+[]|[]| 
+ []
+
+
+Overfull \hbox (39.09529pt too wide) in alignment at lines 1--32
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 32
+ []
+
+) (./cgg.model.FieldWriteNode
+Overfull \hbox (24.0pt too wide) in alignment at lines 1--18
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 18
+ []
+
+) (./cgg.model.FieldNode
+Overfull \hbox (24.0pt too wide) in alignment at lines 1--14
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 14
+ []
+
+[11]) (./cgg.model.ClassNode
+Overfull \hbox (111.43839pt too wide) in paragraph at lines 28--29
+[]|[]| 
+ []
+
+
+Overfull \hbox (24.0pt too wide) in alignment at lines 1--36
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 36
+ []
+
+) (./cgg.model.BlockNode
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 6.
+
+(/usr/local/Cellar/texlive/2012/2012/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 6.
+
+Overfull \hbox (24.0pt too wide) in alignment at lines 1--18
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 18
+ []
+
+[12])) [13] (./javadoc.aux) ) 
+Here is how much of TeX's memory you used:
+ 516 strings out of 494059
+ 6166 string characters out of 3152186
+ 86459 words of memory out of 3000000
+ 3920 multiletter control sequences out of 15000+200000
+ 11757 words of font info for 46 fonts, out of 3000000 for 9000
+ 745 hyphenation exceptions out of 8191
+ 27i,10n,19p,741b,301s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on javadoc.dvi (13 pages, 50176 bytes).

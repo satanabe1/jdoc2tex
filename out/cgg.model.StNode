@@ -1,0 +1,48 @@
+\begin{longtable}{|p{0.3\textwidth}|p{0.7\textwidth}|}
+ \hline
+ \hline
+ \multicolumn{2}{|l|}{\large cgg.model.StNode } \\
+ \hline
+ \multicolumn{2}{|l|}{\footnotesize \shortstack[l]{自作の構文木のノードは、すべて、このクラスのサブクラスとする{}}} \\
+ \hline
+Method  & Summary \\
+ \hline
+ \scriptsize \shortstack[l]{getId\ \ (){}} & \scriptsize \shortstack[l]{ノードの文字列表現を返す \\ toStringとは違う{}} \\
+ \hline
+ \scriptsize \shortstack[l]{setParent\\\ \ (StNode){}} & \scriptsize \shortstack[l]{ノードの親ノードをセットする{}} \\
+ \hline
+ \scriptsize \shortstack[l]{getParent\ \ (){}} & \scriptsize \shortstack[l]{ノードの親ノードを返す{}} \\
+ \hline
+ \scriptsize \shortstack[l]{getStartPosition\ \ (){}} & \scriptsize \shortstack[l]{ソースコード中でノードの存在する位置を返す{}} \\
+ \hline
+ \scriptsize \shortstack[l]{contains\\\ \ (StNode,StNode){}} & \scriptsize \shortstack[l]{baseの中に，childを含むか{}} \\
+ \hline
+ \scriptsize \shortstack[l]{contains\\\ \ (ClassNode,StNode){}} & \scriptsize \shortstack[l]{childノードを含むか{}} \\
+ \hline
+ \scriptsize \shortstack[l]{contains\\\ \ (MethodNode,StNode){}} & \scriptsize \shortstack[l]{childノードを含むか{}} \\
+ \hline
+ \scriptsize \shortstack[l]{contains\\\ \ (BlockNode,StNode){}} & \scriptsize \shortstack[l]{childノードを含むか{}} \\
+ \hline
+ \scriptsize \shortstack[l]{contains\\\ \ (ReturnNode,StNode){}} & \scriptsize \shortstack[l]{childノードを含むか{}} \\
+ \hline
+ \scriptsize \shortstack[l]{contains\\\ \ (IfNode,StNode){}} & \scriptsize \shortstack[l]{childノードを含むか{}} \\
+ \hline
+ \scriptsize \shortstack[l]{contains\\\ \ (List,StNode){}} & \scriptsize \shortstack[l]{listのノードの内部にchildノードを含むか{}} \\
+ \hline
+ \scriptsize \shortstack[l]{contains\\\ \ (StNode,Class){}} & \scriptsize \shortstack[l]{baseの中に，childNodeClassのインスタンスのノードを含むか{}} \\
+ \hline
+ \scriptsize \shortstack[l]{contains\\\ \ (ClassNode,Class){}} & \scriptsize \shortstack[l]{childNodeClassのインスタンスのノードを含むか{}} \\
+ \hline
+ \scriptsize \shortstack[l]{contains\\\ \ (MethodNode,Class){}} & \scriptsize \shortstack[l]{childNodeClassのインスタンスのノードを含むか{}} \\
+ \hline
+ \scriptsize \shortstack[l]{contains\\\ \ (BlockNode,Class){}} & \scriptsize \shortstack[l]{childNodeClassのインスタンスのノードを含むか{}} \\
+ \hline
+ \scriptsize \shortstack[l]{contains\\\ \ (ReturnNode,Class){}} & \scriptsize \shortstack[l]{childNodeClassのインスタンスのノードを含むか{}} \\
+ \hline
+ \scriptsize \shortstack[l]{contains\\\ \ (IfNode,Class){}} & \scriptsize \shortstack[l]{childNodeClassのインスタンスのノードを含むか{}} \\
+ \hline
+ \scriptsize \shortstack[l]{contains\\\ \ (List,Class){}} & \scriptsize \shortstack[l]{listの要素のノードが，childNodeClassのインスタンスのノードを含むか{}} \\
+ \hline
+ \scriptsize \shortstack[l]{getRoute\\\ \ (StNode){}} & \scriptsize \shortstack[l]{nodeに至るまでの親の系列を取得する{}} \\
+ \hline
+\end{longtable}

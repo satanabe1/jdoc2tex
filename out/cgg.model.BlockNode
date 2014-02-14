@@ -1,0 +1,18 @@
+\begin{longtable}{|p{0.3\textwidth}|p{0.7\textwidth}|}
+ \hline
+ \hline
+ \multicolumn{2}{|l|}{\large cgg.model.BlockNode } \\
+ \hline
+ \multicolumn{2}{|l|}{\footnotesize \shortstack[l]{ブロックノード"\{\}"を表すクラス \\ できること \\ ・子の追加 \\ ・子の削除 \\ ・子の取得 \\{}}} \\
+ \hline
+Method  & Summary \\
+ \hline
+ \scriptsize \shortstack[l]{add\\\ \ (StNode){}} & \scriptsize \shortstack[l]{子の追加{}} \\
+ \hline
+ \scriptsize \shortstack[l]{remove\\\ \ (StNode){}} & \scriptsize \shortstack[l]{子の削除{}} \\
+ \hline
+ \scriptsize \shortstack[l]{getChildList\ \ (){}} & \scriptsize \shortstack[l]{子の取得{}} \\
+ \hline
+ \scriptsize \shortstack[l]{toString\ \ (){}} & \scriptsize \shortstack[l]{{}} \\
+ \hline
+\end{longtable}

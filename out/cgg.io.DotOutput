@@ -1,0 +1,12 @@
+\begin{longtable}{|p{0.3\textwidth}|p{0.7\textwidth}|}
+ \hline
+ \hline
+ \multicolumn{2}{|l|}{\large cgg.io.DotOutput } \\
+ \hline
+ \multicolumn{2}{|l|}{\footnotesize \shortstack[l]{なんらかの情報をdot言語で出力するクラスのsuperclass{}}} \\
+ \hline
+Method  & Summary \\
+ \hline
+ \scriptsize \shortstack[l]{toDot\ \ (){}} & \scriptsize \shortstack[l]{情報をdot言語で出力する{}} \\
+ \hline
+\end{longtable}

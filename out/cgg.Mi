@@ -1,0 +1,12 @@
+\begin{longtable}{|p{0.3\textwidth}|p{0.7\textwidth}|}
+ \hline
+ \hline
+ \multicolumn{2}{|l|}{\large cgg.Mi } \\
+ \hline
+ \multicolumn{2}{|l|}{\footnotesize \shortstack[l]{ユーザにメソッド依存の排他性を確認する機能を提供するクラス \\ mainを持つ{}}} \\
+ \hline
+Method  & Summary \\
+ \hline
+ \scriptsize \shortstack[l]{main\\\ \ (String){}} & \scriptsize \shortstack[l]{{}} \\
+ \hline
+\end{longtable}

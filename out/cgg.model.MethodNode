@@ -1,0 +1,36 @@
+\begin{longtable}{|p{0.3\textwidth}|p{0.7\textwidth}|}
+ \hline
+ \hline
+ \multicolumn{2}{|l|}{\large cgg.model.MethodNode } \\
+ \hline
+ \multicolumn{2}{|l|}{\footnotesize \shortstack[l]{メソッド宣言 \\ できること \\ ・子ブロックの設定・取得 \\ ・メソッドの依存先を追加・取得 \\ ・メソッド呼び出しの追加・取得 \\ ・メソッド修飾子の追加・取得 \\{}}} \\
+ \hline
+Method  & Summary \\
+ \hline
+ \scriptsize \shortstack[l]{setBody\\\ \ (BlockNode){}} & \scriptsize \shortstack[l]{メソッドブロックの設定{}} \\
+ \hline
+ \scriptsize \shortstack[l]{getBody\ \ (){}} & \scriptsize \shortstack[l]{メソッドブロックの取得{}} \\
+ \hline
+ \scriptsize \shortstack[l]{setModifiers\\\ \ (int){}} & \scriptsize \shortstack[l]{修飾子の設定{}} \\
+ \hline
+ \scriptsize \shortstack[l]{getModifiers\ \ (){}} & \scriptsize \shortstack[l]{メソッド修飾子の取得{}} \\
+ \hline
+ \scriptsize \shortstack[l]{addDependsMethod\\\ \ (MethodNode){}} & \scriptsize \shortstack[l]{メソッドの依存先を追加{}} \\
+ \hline
+ \scriptsize \shortstack[l]{addInvocationNode\\\ \ (InvocationNode){}} & \scriptsize \shortstack[l]{メソッド呼び出しの追加{}} \\
+ \hline
+ \scriptsize \shortstack[l]{getInvocationNodes\ \ (){}} & \scriptsize \shortstack[l]{メソッド内に存在するメソッド呼び出し一覧の取得{}} \\
+ \hline
+ \scriptsize \shortstack[l]{getInvocationNodes\\\ \ (MethodNode){}} & \scriptsize \shortstack[l]{メソッド内に存在する callee に対するメソッド呼び出し一覧の取得{}} \\
+ \hline
+ \scriptsize \shortstack[l]{getDependsMethods\\\ \ (boolean){}} & \scriptsize \shortstack[l]{メソッド内で直接依存する，メソッド一覧を取得する \\ 未実装{}} \\
+ \hline
+ \scriptsize \shortstack[l]{getAllDependsMethods\ \ (){}} & \scriptsize \shortstack[l]{依存する，全てのメソッド一覧を取得する \\ 呼び出し先のメソッドが，さらに呼んでいるメソッドとかも取得できる{}} \\
+ \hline
+ \scriptsize \shortstack[l]{exclusibeInvoke\\\ \ (MethodNode,MethodNode){}} & \scriptsize \shortstack[l]{２つのメソッド callee0とcallee1 が，それぞれ，制御構文によって排他的にアクセスされるか調べる{}} \\
+ \hline
+ \scriptsize \shortstack[l]{exclusive\\\ \ (InvocationNode,InvocationNode){}} & \scriptsize \shortstack[l]{２つのメソッド呼び出しが排他的であるかを調べる{}} \\
+ \hline
+ \scriptsize \shortstack[l]{toString\ \ (){}} & \scriptsize \shortstack[l]{{}} \\
+ \hline
+\end{longtable}

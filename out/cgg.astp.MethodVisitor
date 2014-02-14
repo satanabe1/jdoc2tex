@@ -1,0 +1,34 @@
+\begin{longtable}{|p{0.3\textwidth}|p{0.7\textwidth}|}
+ \hline
+ \hline
+ \multicolumn{2}{|l|}{\large cgg.astp.MethodVisitor } \\
+ \hline
+ \multicolumn{2}{|l|}{\footnotesize \shortstack[l]{ASTNode ‚ğ TreeBuilder‚É“Š‚°‚ñ‚Å‚¢‚­ƒNƒ‰ƒX{}}} \\
+ \hline
+Method  & Summary \\
+ \hline
+ \scriptsize \shortstack[l]{getTypes\ \ (){}} & \scriptsize \shortstack[l]{‰ğÍ‚Å‚İ‚Â‚©‚Á‚½ClassNodeˆê——‚ğ•Ô‚·{}} \\
+ \hline
+ \scriptsize \shortstack[l]{getInvocations\ \ (){}} & \scriptsize \shortstack[l]{‰ğÍ‚Å‚İ‚Â‚©‚Á‚½InvocationNodeˆê——‚ğ•Ô‚·{}} \\
+ \hline
+ \scriptsize \shortstack[l]{visit\\\ \ (TypeDeclaration){}} & \scriptsize \shortstack[l]{{}} \\
+ \hline
+ \scriptsize \shortstack[l]{visit\\\ \ (MethodDeclaration){}} & \scriptsize \shortstack[l]{{}} \\
+ \hline
+ \scriptsize \shortstack[l]{visit\\\ \ (Block){}} & \scriptsize \shortstack[l]{{}} \\
+ \hline
+ \scriptsize \shortstack[l]{visit\\\ \ (IfStatement){}} & \scriptsize \shortstack[l]{{}} \\
+ \hline
+ \scriptsize \shortstack[l]{visit\\\ \ (MethodInvocation){}} & \scriptsize \shortstack[l]{{}} \\
+ \hline
+ \scriptsize \shortstack[l]{visit\\\ \ (Assignment){}} & \scriptsize \shortstack[l]{{}} \\
+ \hline
+ \scriptsize \shortstack[l]{visit\\\ \ (FieldDeclaration){}} & \scriptsize \shortstack[l]{{}} \\
+ \hline
+ \scriptsize \shortstack[l]{visit\\\ \ (ReturnStatement){}} & \scriptsize \shortstack[l]{{}} \\
+ \hline
+ \scriptsize \shortstack[l]{visit\\\ \ (TryStatement){}} & \scriptsize \shortstack[l]{{}} \\
+ \hline
+ \scriptsize \shortstack[l]{visit\\\ \ (CatchClause){}} & \scriptsize \shortstack[l]{{}} \\
+ \hline
+\end{longtable}

@@ -1,0 +1,14 @@
+\begin{longtable}{|p{0.3\textwidth}|p{0.7\textwidth}|}
+ \hline
+ \hline
+ \multicolumn{2}{|l|}{\large cgg.Graphvizer } \\
+ \hline
+ \multicolumn{2}{|l|}{\footnotesize \shortstack[l]{ソースコードから拡張コールグラフを，dot言語形式で吐き出す為のクラス \\ mainを持つ{}}} \\
+ \hline
+Method  & Summary \\
+ \hline
+ \scriptsize \shortstack[l]{main\\\ \ (String){}} & \scriptsize \shortstack[l]{{}} \\
+ \hline
+ \scriptsize \shortstack[l]{genimg\\\ \ (File,String,File){}} & \scriptsize \shortstack[l]{{}} \\
+ \hline
+\end{longtable}

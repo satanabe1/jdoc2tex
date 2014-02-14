@@ -1,0 +1,32 @@
+\begin{longtable}{|p{0.3\textwidth}|p{0.7\textwidth}|}
+ \hline
+ \hline
+ \multicolumn{2}{|l|}{\large cgg.model.IfNode } \\
+ \hline
+ \multicolumn{2}{|l|}{\footnotesize \shortstack[l]{if文 \\ できること \\ ・分岐条件の設定・取得 \\ ・Then文の設定・取得 \\ ・Else文の設定・取得 \\  \\ 現状の実装では，例えば条件判定式に，複数のメソッド呼び出しがる場合などにおかしくなってしまう{}}} \\
+ \hline
+Method  & Summary \\
+ \hline
+ \scriptsize \shortstack[l]{setExpression\\\ \ (StNode){}} & \scriptsize \shortstack[l]{分岐条件の設定{}} \\
+ \hline
+ \scriptsize \shortstack[l]{getExpression\ \ (){}} & \scriptsize \shortstack[l]{分岐条件の取得{}} \\
+ \hline
+ \scriptsize \shortstack[l]{setExpressionStr\\\ \ (String){}} & \scriptsize \shortstack[l]{分岐条件の文字列表現の設定{}} \\
+ \hline
+ \scriptsize \shortstack[l]{getExpressionStr\ \ (){}} & \scriptsize \shortstack[l]{分岐条件の文字列表現を取得 \\ IfNode\#setExpression(StNode) で設定されていれば、そちらから，文字列表現を生成する{}} \\
+ \hline
+ \scriptsize \shortstack[l]{setThenStatement\\\ \ (StNode){}} & \scriptsize \shortstack[l]{then文の設定{}} \\
+ \hline
+ \scriptsize \shortstack[l]{getThenStatement\ \ (){}} & \scriptsize \shortstack[l]{then文の取得{}} \\
+ \hline
+ \scriptsize \shortstack[l]{setElseStatement\\\ \ (StNode){}} & \scriptsize \shortstack[l]{else文の設定{}} \\
+ \hline
+ \scriptsize \shortstack[l]{getElseStatement\ \ (){}} & \scriptsize \shortstack[l]{else文の取得{}} \\
+ \hline
+ \scriptsize \shortstack[l]{containsInThen\\\ \ (StNode){}} & \scriptsize \shortstack[l]{指定したノードがthen側に含まれているか \\ 内部でStNode\#contains(StNode, StNode)を呼ぶだけ{}} \\
+ \hline
+ \scriptsize \shortstack[l]{containsInElse\\\ \ (StNode){}} & \scriptsize \shortstack[l]{指定したノードがelse側に含まれるか \\ 内部でStNode\#contains(StNode, StNode)を呼ぶだけ{}} \\
+ \hline
+ \scriptsize \shortstack[l]{toString\ \ (){}} & \scriptsize \shortstack[l]{{}} \\
+ \hline
+\end{longtable}
