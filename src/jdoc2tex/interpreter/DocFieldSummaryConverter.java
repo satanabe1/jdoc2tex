@@ -8,6 +8,7 @@ import com.sun.javadoc.ClassDoc;
 import com.sun.javadoc.FieldDoc;
 import com.sun.javadoc.MethodDoc;
 import com.sun.javadoc.Parameter;
+import com.sun.javadoc.Type;
 
 public class DocFieldSummaryConverter extends AbstractDocConverter {
 
@@ -17,13 +18,18 @@ public class DocFieldSummaryConverter extends AbstractDocConverter {
 			return "";
 		}
 
-		ITableManager table = new DocTableManager(0.3, 0.7);
+		ITableManager table = new DocTableManager(0.2, 0.25, 0.55);
 
-		table.addRow("Field", "Summary");
+		table.addRow("Field", "Type", "Summary");
 		for (FieldDoc field : classDoc.fields()) {
-			System.out.println(classDoc.name()+"."+field.name()+"   :  "+field.commentText());
-			table.addRow(TexFontSize.SCRIPTSIZE, par(field.name()),
-					par(field.commentText()));
+			ClassDoc clDoc = field.containingClass();
+			String typeStr = new String();
+			if (clDoc.containingPackage() != null) {
+				typeStr = TexFontSize.TINY + " " + clDoc.containingPackage().name() + " \\\\ ";
+			} 
+
+			typeStr += TexFontSize.SCRIPTSIZE + " " + clDoc.name();
+			table.addRow(TexFontSize.SCRIPTSIZE, par(field.name()), escape(typeStr), par(field.commentText()));
 		}
 
 		return table.generateTable();
