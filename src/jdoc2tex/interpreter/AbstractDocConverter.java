@@ -1,8 +1,5 @@
 package jdoc2tex.interpreter;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public abstract class AbstractDocConverter implements IDocConverter {
 
 	protected String vspace() {
@@ -64,6 +61,8 @@ public abstract class AbstractDocConverter implements IDocConverter {
 		ss = ss.replaceAll("\\{@link (.*?)\\}", "$1");
 		// <br> を \\ に置換
 		ss = ss.replaceAll("<\\s*?[Bb][Rr].*?>", " \\\\par");
+		// // \n を に置換
+		// ss = ss.replaceAll("\\n", "");
 		ss = escape(ss);
 		return ss.toString();
 	}
