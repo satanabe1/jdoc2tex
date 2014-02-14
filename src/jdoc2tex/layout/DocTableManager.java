@@ -5,7 +5,7 @@ import java.util.List;
 
 public class DocTableManager implements ITableManager {
 
-	private List<String> rows;
+	private List<String[]> rows;
 
 	private double[] width;
 
@@ -14,12 +14,16 @@ public class DocTableManager implements ITableManager {
 		this.width = width;
 	}
 
-	public boolean addRow(String row) {
+	public boolean addRow(String... row) {
 		return rows.add(row);
 	}
 
-	public boolean addRow(String row, String size) {
-		return rows.add(size + " " + row);
+	public boolean addRow(TexFontSize size, String... row) {
+		String[] tmp = new String[row.length];
+		for (int i = 0; i < row.length; i++) {
+			tmp[i] = size + " " + row;
+		}
+		return rows.add(tmp);
 	}
 
 	public String generateTable() {
@@ -38,7 +42,10 @@ public class DocTableManager implements ITableManager {
 	private String begin() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("\\begin{longtable}{");
+		for (double wd : width) {
 
+		}
+		sb.deleteCharAt(sb.length() - 1);
 		sb.append("}");
 		return sb.toString();
 	}
