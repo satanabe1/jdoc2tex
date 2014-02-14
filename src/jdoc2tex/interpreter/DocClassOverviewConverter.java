@@ -13,8 +13,8 @@ public class DocClassOverviewConverter extends AbstractDocConverter {
 		ITableManager table = new DocTableManager(1);
 
 		table.addRow("");
-		table.addRow(TexFontSize.SCRIPTSIZE,escape(classDoc.qualifiedTypeName()));
-		table.addRow(TexFontSize.LARGE1, escape(classDoc.qualifiedName()));
+		table.addRow(TexFontSize.SCRIPTSIZE,escape(classDoc.containingPackage().name()
+				+ "\\\\ \\Large Class " + escape(classDoc.name())));
 		table.addRow(par(classDoc.commentText()));
 
 		table.enableTopMargin();

@@ -8,6 +8,7 @@ import jdoc2tex.interpreter.DocSuperClassSummaryConverter;
 import jdoc2tex.interpreter.IDocConverter;
 
 import com.sun.javadoc.ClassDoc;
+import com.sun.tools.javadoc.DocletInvoker;
 
 public class LongTable extends TexOut {
 
@@ -19,14 +20,17 @@ public class LongTable extends TexOut {
 		IDocConverter[] converters = new IDocConverter[] {
 				new DocClassOverviewConverter(),	//
 				new DocSuperClassSummaryConverter(),	//
+				new DocImplementedInterfacesConverter(),	//
 				new DocMethodSummaryConverter() 	//
 				};
 
 		StringBuilder sb = new StringBuilder();
 
+		sb.append(" { \n");
 		for (IDocConverter idoc : converters) {
 			sb.append(idoc.interpretConverter(klass));
 		}
+		sb.append(" } \n");
 		
 		return sb.toString();
 	}
