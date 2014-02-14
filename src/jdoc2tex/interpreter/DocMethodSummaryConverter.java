@@ -12,7 +12,7 @@ public class DocMethodSummaryConverter extends AbstractDocConverter {
 
 	@Override
 	public String interpretConverter(ClassDoc classDoc) {
-		if (classDoc.interfaces().length==0) {
+		if (classDoc.methods().length==0) {
 			return "";
 		}
 
