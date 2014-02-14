@@ -12,7 +12,7 @@ public class DocMethodSummaryConverter extends AbstractDocConverter {
 
 	@Override
 	public String interpretConverter(ClassDoc classDoc) {
-		if (classDoc.methods().length==0) {
+		if (classDoc.methods().length == 0) {
 			return "";
 		}
 
@@ -20,10 +20,8 @@ public class DocMethodSummaryConverter extends AbstractDocConverter {
 
 		table.addRow("Method", "Summary");
 		for (MethodDoc method : classDoc.methods()) {
-			// getMethod comment to interface or superclass
-			
-			table.addRow(TexFontSize.SCRIPTSIZE, getMethodName(method),
-					par(method.commentText()));
+
+			table.addRow(TexFontSize.SCRIPTSIZE, getMethodName(method), par(getCommentSuperClass(classDoc, method)));
 		}
 
 		return table.generateTable();
@@ -47,11 +45,39 @@ public class DocMethodSummaryConverter extends AbstractDocConverter {
 		sb.append(")");
 		return sb.toString();
 	}
-	
+
 	private String getCommentSuperClass(ClassDoc classDoc, MethodDoc methodDoc) {
-		if (methodDoc.commentText().equals("")) {
-			
+		MethodDoc mt = getAnothorClasssMethodDoc(classDoc, methodDoc);
+		if (mt == null) {
+			return "";
+		}
+
+		if (!mt.commentText().equals("")) {
+			return mt.commentText();
+		}
+
+		for (ClassDoc cl : classDoc.interfaces()) {
+			String comment = getCommentSuperClass(cl, mt);
+			if (!comment.equals("")) {
+				return comment;
+			}
+		}
+		if (classDoc.superclass() != null) {
+			String comment = getCommentSuperClass(classDoc.superclass(), mt);
+			if (!comment.equals("")) {
+				return comment;
+			}
 		}
 		return "";
+	}
+
+	private MethodDoc getAnothorClasssMethodDoc(ClassDoc targetClassDoc, MethodDoc thisClassMethodDoc) {
+		MethodDoc m = thisClassMethodDoc;
+		for (MethodDoc mt : targetClassDoc.methods()) {
+			if (mt.name().equals(m.name()) && mt.signature().equals(m.signature())) {
+				return mt;
+			}
+		}
+		return null;
 	}
 }
