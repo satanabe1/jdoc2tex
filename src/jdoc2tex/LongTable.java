@@ -19,22 +19,20 @@ public class LongTable extends TexOut {
 
 	public String tex(ClassDoc klass) {
 
-		IDocConverter[] converters = new IDocConverter[]{
-			new DocClassOverviewConverter(),
-			new DocMethodSummaryConverter()
-		};
-		
+		IDocConverter[] converters = new IDocConverter[] {
+				new DocClassOverviewConverter(),
+				new DocMethodSummaryConverter() };
+
 		StringBuilder sb = new StringBuilder();
 		sb.append("\\begin{longtable}{p{0.3\\textwidth}|p{0.7\\textwidth}}")
 				.append("\n");
-		
+
 		for (IDocConverter idoc : converters) {
 			sb.append(idoc.interpretConverter(klass));
 		}
-		
+
 		sb.append("\\end{longtable}");
 		return sb.toString();
 	}
-
 
 }
