@@ -5,6 +5,7 @@ import java.util.regex.Pattern;
 
 import jdoc2tex.interpreter.DocClassOverviewConverter;
 import jdoc2tex.interpreter.DocMethodSummaryConverter;
+import jdoc2tex.interpreter.DocSuperClassSummaryConverter;
 import jdoc2tex.interpreter.IDocConverter;
 
 import com.sun.javadoc.ClassDoc;
@@ -21,6 +22,7 @@ public class LongTable extends TexOut {
 
 		IDocConverter[] converters = new IDocConverter[] {
 				new DocClassOverviewConverter(),	//
+				new DocSuperClassSummaryConverter(),	//
 				new DocMethodSummaryConverter() 	//
 				};
 
