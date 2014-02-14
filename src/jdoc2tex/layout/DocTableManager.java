@@ -32,21 +32,52 @@ public class DocTableManager implements ITableManager {
 		// sb.append("\\begin{longtable}{p{0.3\\textwidth}|p{0.7\\textwidth}}")
 		// .append("\n");
 
-		sb.append(begin());
-
+		sb.append(begin()).append("\n"); // \\begin{longtable}{p{0.3\\textwidth}|p{0.7\\textwidth}}
+		sb.append(" \\hline").append("\n");
+		for (String[] row : rows) {
+			sb.append(genrow(row));
+			sb.append("\\\\ ").append("\n");
+			sb.append(" \\hline").append("\n");
+		}
 		sb.append("\\end{longtable}");
 
 		return sb.toString();
 	}
 
+	/**
+	 * \\begin{longtable}{p{0.3\\textwidth}|p{0.7\\textwidth}}
+	 * 
+	 * @return
+	 */
 	private String begin() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("\\begin{longtable}{");
 		for (double wd : width) {
-
+			// p{0.3\\textwidth}|
+			sb.append("p{");
+			sb.append(wd).append("\\textwidth}|");
 		}
-		sb.deleteCharAt(sb.length() - 1);
+		if (width.length > 0) {
+			sb.deleteCharAt(sb.length() - 1);
+		}
 		sb.append("}");
+		return sb.toString();
+	}
+
+	/**
+	 * row[0] & row[1] & row[2] ...
+	 * @param row
+	 * @return
+	 */
+	private String genrow(String[] row) {
+		StringBuilder sb = new StringBuilder();
+		for (String cel : row) {
+			sb.append(cel);
+			sb.append(" &");
+		}
+		if (row.length > 0) {
+			sb.deleteCharAt(sb.length() - 1);
+		}
 		return sb.toString();
 	}
 }
