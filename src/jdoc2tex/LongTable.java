@@ -61,7 +61,7 @@ public class LongTable extends TexOut {
 		if (method.parameters().length > 0) {
 			sb.append("\\\\");
 		}
-		sb.append("\\ \\ (");
+		sb.append("\\scriptsize \\ \\ (");
 
 		for (Parameter param : method.parameters()) {
 			sb.append(param.type().simpleTypeName()).append(",");
@@ -86,6 +86,7 @@ public class LongTable extends TexOut {
 	 * @param text
 	 * @return
 	 */
+	@SuppressWarnings("unused")
 	private int getHeight(String text) {
 		Pattern pattern = Pattern.compile("(<\\s*?[Bb][Rr].*?>)");
 		Matcher matcher = pattern.matcher(text);
