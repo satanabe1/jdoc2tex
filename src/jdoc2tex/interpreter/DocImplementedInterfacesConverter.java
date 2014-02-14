@@ -10,13 +10,15 @@ public class DocImplementedInterfacesConverter extends AbstractDocConverter {
 
 	@Override
 	public String interpretConverter(ClassDoc classDoc) {
+		if (classDoc.interfaces().length==0) {
+			return "";
+		}
+		
 		ITableManager table = new DocTableManager(1);
 
-		if (classDoc.interfaces().length!=0) { 
-			table.addRow(TexFontSize.FOOTNOTESIZE, "All Implemented Interfaces: \\\\ \\hspace{1zw} " + getInterfaces(classDoc));
-			return table.generateTable();
-		}
-		return "";
+		table.addRow(TexFontSize.FOOTNOTESIZE, "All Implemented Interfaces: \\\\ \\hspace{1zw} " + getInterfaces(classDoc));
+		return table.generateTable();
+
 	}
 	
 	private String getInterfaces(ClassDoc classDoc) {

@@ -12,6 +12,9 @@ public class DocMethodSummaryConverter extends AbstractDocConverter {
 
 	@Override
 	public String interpretConverter(ClassDoc classDoc) {
+		if (classDoc.interfaces().length==0) {
+			return "";
+		}
 
 		ITableManager table = new DocTableManager(0.3, 0.7);
 

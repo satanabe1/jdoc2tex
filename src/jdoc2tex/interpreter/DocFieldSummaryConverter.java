@@ -13,26 +13,20 @@ public class DocFieldSummaryConverter extends AbstractDocConverter {
 
 	@Override
 	public String interpretConverter(ClassDoc classDoc) {
+		if (classDoc.interfaces().length==0) {
+			return "";
+		}
 
 		ITableManager table = new DocTableManager(0.3, 0.7);
 
-		table.addRow("Method", "Summary");
-		for (FieldDoc field : classDoc.fields()) {
-			table.addRow(TexFontSize.SCRIPTSIZE, getFieldName(field),
+		table.addRow("Field", "Summary");
+		for (FieldDoc field : classDoc.fields(false)) {
+			System.out.println(classDoc.name()+"."+field.name()+"   :  "+field.commentText());
+			table.addRow(TexFontSize.SCRIPTSIZE, par(field.name()),
 					par(field.commentText()));
 		}
 
 		return table.generateTable();
 	}
 
-	private String getFieldName(FieldDoc field) {
-		StringBuilder sb = new StringBuilder();
-		sb.append(escape(field.name()));
-		sb.append("\\\\");
-		sb.append("\\ \\ (");
-
-
-		sb.append(")");
-		return sb.toString();
-	}
 }
