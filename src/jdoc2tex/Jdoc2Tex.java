@@ -51,25 +51,19 @@ public class Jdoc2Tex {
 
 	public static boolean start(RootDoc root) {
 		String outdir = "out";
+		String subdir = outdir + File.separator + "javadoc";
 		TexOut texOut = new LongTable();
 
-		// System.out.println(texOut.tex(root));
 		write(outdir, "javadoc.tex", texOut.tex(root));
 
 		for (PackageDoc pd : root.specifiedPackages()) {
-			// System.out.println(texOut.tex(pd));
-			write(outdir, pd.name(), texOut.tex(pd));
+			write(subdir, pd.name(), texOut.tex(pd));
 		}
 
 		ClassDoc[] classes = root.classes();
 		for (int i = 0; i < classes.length; i++) {
 			String tex = texOut.tex(classes[i]);
-			write(outdir, classes[i].qualifiedName(), tex);
-			// System.out.println();
-			// System.out.println(tex);
-			// if (i % 10 == 9) {
-			// System.out.println("\\clearpage");
-			// }
+			write(subdir, classes[i].qualifiedName(), tex);
 		}
 
 		System.out.println("---");

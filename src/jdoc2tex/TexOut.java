@@ -45,6 +45,7 @@ abstract public class TexOut {
 
 		for (PackageDoc pd : packages) {
 			sb.append("\\input{");
+			sb.append("javadoc/");
 			sb.append(pd.name());
 			sb.append("}").append("\n");
 		}
@@ -59,11 +60,11 @@ abstract public class TexOut {
 				.append("\n");
 		for (ClassDoc klass : pd.allClasses()) {
 			sb.append("\\input{");
+			sb.append("javadoc/");
 			sb.append(klass.qualifiedName());
 			sb.append("}");
 			sb.append("\n");
 		}
 		return sb.toString();
 	}
-
 }
