@@ -47,7 +47,7 @@ public class DocTableManager implements ITableManager {
 
 		sb.append(topMargin);
 		// セル高さを0.7倍に
-		sb.append("\\renewcommand{\\arraystretch}{0.75}").append("\n");
+		// sb.append("\\renewcommand{\\arraystretch}{0.75}").append("\n");
 		sb.append(begin()).append("\n"); // \\begin{longtable}{p{0.3\\textwidth}|p{0.7\\textwidth}}
 		sb.append(" \\hline").append("\n");
 		for (String[] row : rows) {
@@ -55,7 +55,7 @@ public class DocTableManager implements ITableManager {
 			sb.append("\n");
 		}
 		sb.append("\\end{longtable}").append("\n");
-		sb.append("\\renewcommand{\\arraystretch}{1.0}").append("\n");
+		// sb.append("\\renewcommand{\\arraystretch}{1.0}").append("\n");
 
 		return sb.toString();
 	}

@@ -18,10 +18,11 @@ public class DocMethodSummaryConverter extends AbstractDocConverter {
 
 		ITableManager table = new DocTableManager(0.3, 0.7);
 
-		table.addRow(TexFontSize.FOOTNOTESIZE,"Method", "Summary");
+		table.addRow(TexFontSize.FOOTNOTESIZE, "Method", "Summary");
 		for (MethodDoc method : classDoc.methods()) {
 
-			table.addRow(TexFontSize.SCRIPTSIZE, getMethodName(method), par(getCommentSuperClass(classDoc, method)));
+			table.addRow(TexFontSize.SCRIPTSIZE, getMethodName(method),
+					par(getCommentSuperClass(classDoc, method)));
 		}
 
 		return table.generateTable();
@@ -30,9 +31,10 @@ public class DocMethodSummaryConverter extends AbstractDocConverter {
 	private String getMethodName(MethodDoc method) {
 		StringBuilder sb = new StringBuilder();
 		if (method.isStatic()) {
-			sb.append(TexFontSize.TINY + " static \\\\ \n " + TexFontSize.SCRIPTSIZE +" ");
+			sb.append(TexFontSize.TINY + " static \\\\ \n "
+					+ TexFontSize.SCRIPTSIZE + " ");
 		}
-		
+
 		sb.append(escape(method.name()));
 		if (method.parameters().length > 0) {
 			sb.append("\\\\");
@@ -40,9 +42,10 @@ public class DocMethodSummaryConverter extends AbstractDocConverter {
 		sb.append("\\ \\ (");
 
 		for (Parameter param : method.parameters()) {
-			sb.append(escape(param.type().simpleTypeName())).append(",");
+			sb.append(escape(param.type().simpleTypeName())).append(", ");
 		}
 		if (method.parameters().length > 0) {
+			sb.deleteCharAt(sb.length() - 1);
 			sb.deleteCharAt(sb.length() - 1);
 		}
 
@@ -75,10 +78,12 @@ public class DocMethodSummaryConverter extends AbstractDocConverter {
 		return "";
 	}
 
-	private MethodDoc getAnothorClasssMethodDoc(ClassDoc targetClassDoc, MethodDoc thisClassMethodDoc) {
+	private MethodDoc getAnothorClasssMethodDoc(ClassDoc targetClassDoc,
+			MethodDoc thisClassMethodDoc) {
 		MethodDoc m = thisClassMethodDoc;
 		for (MethodDoc mt : targetClassDoc.methods()) {
-			if (mt.name().equals(m.name()) && mt.signature().equals(m.signature())) {
+			if (mt.name().equals(m.name())
+					&& mt.signature().equals(m.signature())) {
 				return mt;
 			}
 		}

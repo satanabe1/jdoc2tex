@@ -42,9 +42,10 @@ public class DocConstructerSummaryConvertor extends AbstractDocConverter {
 		sb.append("\\ \\ (");
 
 		for (Parameter param : constructor.parameters()) {
-			sb.append(escape(param.type().simpleTypeName())).append(",");
+			sb.append(escape(param.type().simpleTypeName())).append(", ");
 		}
 		if (constructor.parameters().length > 0) {
+			sb.deleteCharAt(sb.length() - 1);
 			sb.deleteCharAt(sb.length() - 1);
 		}
 
