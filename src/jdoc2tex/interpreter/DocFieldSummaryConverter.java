@@ -22,15 +22,21 @@ public class DocFieldSummaryConverter extends AbstractDocConverter {
 
 		table.addRow("Field", "Type", "Summary");
 		for (FieldDoc field : classDoc.fields(false)) {
+			// フィールド名の表示文字列
+			String fieldName = field.name();
+			if (field.isStatic()) {
+				fieldName = TexFontSize.TINY + " static \\\\ "+TexFontSize.SCRIPTSIZE + " " + fieldName;
+			}
+			
+			// フィールドの型の表示文字列
 			Type type = field.type();
+			String typeStr = type.typeName();
 			ClassDoc clsDoc = type.asClassDoc();
-			String typeStr = new String();
 			if (!type.isPrimitive() && clsDoc!=null) {
-				typeStr = TexFontSize.TINY + " " + clsDoc.containingPackage() + " \\\\ ";
-			} 
-
-			typeStr += TexFontSize.SCRIPTSIZE + " " + type.typeName();
-			table.addRow(TexFontSize.SCRIPTSIZE, par(field.name()), escape(typeStr), par(field.commentText()));
+				typeStr = TexFontSize.TINY + " " + clsDoc.containingPackage() + " \\\\ " + TexFontSize.SCRIPTSIZE + " " + typeStr;
+			}
+			
+			table.addRow(TexFontSize.SCRIPTSIZE, par(fieldName), escape(typeStr), par(field.commentText()));
 		}
 
 		return table.generateTable();
