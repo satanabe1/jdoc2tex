@@ -18,7 +18,7 @@ public class DocMethodSummaryConverter extends AbstractDocConverter {
 
 		ITableManager table = new DocTableManager(0.3, 0.7);
 
-		table.addRow("Method", "Summary");
+		table.addRow(TexFontSize.FOOTNOTESIZE,"Method", "Summary");
 		for (MethodDoc method : classDoc.methods()) {
 
 			table.addRow(TexFontSize.SCRIPTSIZE, getMethodName(method), par(getCommentSuperClass(classDoc, method)));

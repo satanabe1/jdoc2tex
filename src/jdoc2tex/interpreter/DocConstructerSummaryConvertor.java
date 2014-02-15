@@ -19,10 +19,15 @@ public class DocConstructerSummaryConvertor extends AbstractDocConverter {
 
 		ITableManager table = new DocTableManager(0.3, 0.7);
 
-		table.addRow("Constructor", "Summary");
+		table.addRow(TexFontSize.FOOTNOTESIZE,"Constructor", "Summary");
 		for (ConstructorDoc constructor : classDoc.constructors()) {
+			// デフォルトコンストラクタのコメント
+			String constructorComment = constructor.commentText();
+			if (constructorComment.equals("") && constructor.parameters().length==0) {
+				constructorComment = "新しい" + classDoc.name() + "クラスのインスタンスを生成します．";
+			}
 
-			table.addRow(TexFontSize.SCRIPTSIZE, getConstructorName(constructor), par(constructor.commentText()));
+			table.addRow(TexFontSize.SCRIPTSIZE, getConstructorName(constructor), par(constructorComment));
 		}
 
 		return table.generateTable();

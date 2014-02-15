@@ -20,7 +20,7 @@ public class DocFieldSummaryConverter extends AbstractDocConverter {
 
 		ITableManager table = new DocTableManager(0.2, 0.25, 0.55);
 
-		table.addRow("Field", "Type", "Summary");
+		table.addRow(TexFontSize.FOOTNOTESIZE,"Field", "Type", "Summary");
 		for (FieldDoc field : classDoc.fields(false)) {
 			// フィールド名の表示文字列
 			String fieldName = field.name();
