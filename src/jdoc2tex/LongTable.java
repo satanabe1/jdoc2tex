@@ -2,6 +2,7 @@ package jdoc2tex;
 
 
 import jdoc2tex.interpreter.DocClassOverviewConverter;
+import jdoc2tex.interpreter.DocConstructerSummaryConvertor;
 import jdoc2tex.interpreter.DocFieldSummaryConverter;
 import jdoc2tex.interpreter.DocImplementedInterfacesConverter;
 import jdoc2tex.interpreter.DocMethodSummaryConverter;
@@ -23,6 +24,7 @@ public class LongTable extends TexOut {
 				new DocSuperClassSummaryConverter(),	//
 				new DocImplementedInterfacesConverter(),	//
 				new DocFieldSummaryConverter(),		//
+				new DocConstructerSummaryConvertor(),	//
 				new DocMethodSummaryConverter() 	//
 				};
 
