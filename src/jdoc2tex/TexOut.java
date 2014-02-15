@@ -28,7 +28,11 @@ abstract public class TexOut {
 			sb.append(usepackage);
 			sb.append("}").append("\n");
 		}
+		sb.append("\\setlength{\\textwidth}{155truemm}").append("\n");
 		sb.append("\\title{Javadoc}").append("\n");
+		sb.append("\\setlength{\\oddsidemargin}{5truemm}").append("\n");
+		sb.append("\\addtolength{\\topmargin}{-1.3truein}").append("\n");
+		sb.append("\\setlength{\\textheight}{262truemm}").append("\n");
 		sb.append("\\date{");
 		sb.append(Calendar.getInstance().getTime().toString());
 		sb.append("}").append("\n");
