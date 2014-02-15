@@ -20,7 +20,8 @@ import com.sun.javadoc.*;
  * -subpackages targetpackage<br>
  * <br>
  * また，また， {@link Jdoc2Tex} クラスは，mainメソッドを持つため，以下の様にも使えます．<br>
- * 例) java -classpath jdoc2tex.jar -sourcepath src -subpackages targetpackage<br>
+ * 例) java -classpath jdoc2tex.jar {@link Jdoc2Tex} -sourcepath src -subpackages
+ * targetpackage<br>
  * <br>
  * 
  * @author satoshi
@@ -62,7 +63,6 @@ public class Jdoc2Tex {
 			write(subdir, classes[i].qualifiedName(), tex);
 		}
 
-		System.out.println("---");
 		return true;
 	}
 
