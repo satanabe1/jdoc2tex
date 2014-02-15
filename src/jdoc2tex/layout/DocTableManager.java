@@ -46,6 +46,8 @@ public class DocTableManager implements ITableManager {
 		StringBuilder sb = new StringBuilder();
 
 		sb.append(topMargin);
+		// セル高さを0.7倍に
+		sb.append("\\renewcommand{\\arraystretch}{0.75}").append("\n");
 		sb.append(begin()).append("\n"); // \\begin{longtable}{p{0.3\\textwidth}|p{0.7\\textwidth}}
 		sb.append(" \\hline").append("\n");
 		for (String[] row : rows) {
@@ -53,6 +55,7 @@ public class DocTableManager implements ITableManager {
 			sb.append("\n");
 		}
 		sb.append("\\end{longtable}").append("\n");
+		sb.append("\\renewcommand{\\arraystretch}{1.0}").append("\n");
 
 		return sb.toString();
 	}
@@ -64,7 +67,8 @@ public class DocTableManager implements ITableManager {
 	 */
 	private String begin() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("\\setlength{\\tabcolsep}{0mm}");
+		// セル内左右パディングを0mmに
+		sb.append("\\setlength{\\tabcolsep}{0mm}").append("\n");
 		sb.append("\\begin{longtable}{");
 		for (double wd : width) {
 			// p{0.3\\textwidth}|
@@ -74,6 +78,7 @@ public class DocTableManager implements ITableManager {
 		if (width.length > 0) {
 			sb.deleteCharAt(sb.length() - 1);
 		}
+		sb.append("\n");
 		sb.append("}");
 		return sb.toString();
 	}
