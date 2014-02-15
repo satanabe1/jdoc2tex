@@ -29,6 +29,10 @@ public class DocMethodSummaryConverter extends AbstractDocConverter {
 
 	private String getMethodName(MethodDoc method) {
 		StringBuilder sb = new StringBuilder();
+		if (method.isStatic()) {
+			sb.append(TexFontSize.TINY + " static \\\\ \n " + TexFontSize.SCRIPTSIZE +" ");
+		}
+		
 		sb.append(escape(method.name()));
 		if (method.parameters().length > 0) {
 			sb.append("\\\\");
