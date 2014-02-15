@@ -14,21 +14,22 @@ public class DocFieldSummaryConverter extends AbstractDocConverter {
 
 	@Override
 	public String interpretConverter(ClassDoc classDoc) {
-		if (classDoc.fields().length==0) {
+		if (classDoc.fields(false).length==0) {
 			return "";
 		}
 
 		ITableManager table = new DocTableManager(0.2, 0.25, 0.55);
 
 		table.addRow("Field", "Type", "Summary");
-		for (FieldDoc field : classDoc.fields()) {
-			ClassDoc clDoc = field.containingClass();
+		for (FieldDoc field : classDoc.fields(false)) {
+			Type type = field.type();
+			ClassDoc clsDoc = type.asClassDoc();
 			String typeStr = new String();
-			if (clDoc.containingPackage() != null) {
-				typeStr = TexFontSize.TINY + " " + clDoc.containingPackage().name() + " \\\\ ";
+			if (!type.isPrimitive() && clsDoc!=null) {
+				typeStr = TexFontSize.TINY + " " + clsDoc.containingPackage() + " \\\\ ";
 			} 
 
-			typeStr += TexFontSize.SCRIPTSIZE + " " + clDoc.name();
+			typeStr += TexFontSize.SCRIPTSIZE + " " + type.typeName();
 			table.addRow(TexFontSize.SCRIPTSIZE, par(field.name()), escape(typeStr), par(field.commentText()));
 		}
 
